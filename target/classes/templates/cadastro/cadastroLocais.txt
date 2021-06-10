@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <title>Condominium</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+  
+function validaCampo()
+{
+if(document.cadastro.nome.value=="")
+{
+alert("O Campo nome Ã© obrigatÃ³rio!");
+return false;
+}
+else
+if(document.cadastro.email.value=="")
+{
+alert("O Campo email Ã© obrigatÃ³rio!");
+return false;
+}
+else
+if(document.cadastro.senha.value=="")
+{
+alert("Digite uma senha!");
+return false;
+}
+else
+if(document.cadastro.senha.value=="")
+{
+alert("Digite uma senha!");
+return false;
+}
+else
+return true;
+}
+var cont_morador = document.getElementById('morador');
+var cont_administrador = document.getElementById('administrador');
+var cont_unidade = document.getElementById('unidade');
+var cont_prestador = document.getElementById('prestador');
+var cont_locais = document.getElementById('locais');
+
+/* Fim do JavaScript que validarÃ¡ os campos obrigatÃ³rios! */
+</script>
+  <style>
+    /* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 450px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      padding-top: 20px;
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }
+    
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>  
+		  
+	<!-- Botões navbar -->
+      </button>
+      <a class="navbar-brand" href="index.php">Condominium</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="inicio.html">Inicio</a></li>
+        <li><a href="cadastro.html">Cadastros</a></li>
+        <li><a href="garagem.html">Espaços</a></li>
+        <li><a href="espaco.html">Eventos</a></li>
+        <li><a href="chamado.html">Chamados</a></li>
+        <li><a href="prestador">Prestadores</a></li>        
+        <li><a href="garagem.html">Garagem</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+  
+<div class="container-fluid text-center">    
+  <div class="row content">
+    <div class="col-sm-2 sidenav text-left"> <!-- Coluna da esquerda MENUS LATERAIS -->
+      <a class="botaoLateral" href="#">Cadastro Administrador</a><br><br>
+      <a class="botaoLateral" href="#">Cadastro Unidades</a><br><br>
+      <a class="botaoLateral" href="#">Cadastro Locais</a><br><br>
+      <a class="botaoLateral" href="cadastroMorador.html">Cadastro Moradores</a><br><br>
+      <a class="botaoLateral" href="#">Cadastro Prestadores</a><br><br>    
+    </div>        
+    <div id="morador" class="col-sm-8 text-left"> <!-- Corpo principal da pagina CADASTRO MORADOR -->
+        <h1> Cadastro de Moradores</h1><br />
+      
+      <form id='cadastro' action="cadastro.php" method="post" onsubmit="return validaCampo(); return false;">
+      
+      <fieldset>
+       <legend>Dados do Novo Morador</legend>
+       <table cellspacing="10">
+        <tr>
+          <tr>
+          <td>
+            <label for="nome">Unidade: </label>
+           </td>
+           <td align="left">
+            <input type="number" name="unidade" id="unidade" required="required" style="margin: 10px;">
+              </td>
+              <td>
+                <label for="nome">Bloco: </label>
+                </td>
+              <td align="center">
+              <input type="text" name="bloco" id="bloco" required="required" style="margin: 10px;">
+              </td>        
+             </tr>
+         <td>
+          <label for="nome">Nome: </label>
+         </td>
+         <td align="left">
+          <input type="text" name="nome" id="nome" required="required" style="margin: 10px;">     
+           </td>
+       </tr>
+        <tr>
+         <td>
+          <label for="email">E-mail: </label>
+         </td>
+         <td align="left">
+          <input type="text" name="email" required="required" style="margin: 10px;">
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <label for="pass">Senha: </label>
+         </td>
+         <td align="left">
+          <input type="password" name="pass" required="required" type="password" style="margin: 10px;">
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <label for="passconfirm">Confirme a senha: </label>
+         </td>
+         <td align="left">
+          <input type="password" name="passconfirm" required="required" type="password" style="margin: 10px;">
+         </td>
+        </tr>
+        <tr>
+         <td>
+          <label for="residencia">Residencia:</label>
+         </td>
+         <td align="left">
+        <select name="residencia"> 
+          <option value="ac">Acre</option>
+        </select>
+           <span class="style1">*</span></td>
+         </td>
+        </tr>
+       </table>
+      </fieldset>
+      <br />
+      <input type="submit" value="Enviar">
+                <input type="reset" value="Limpar">
+      </form>
+          </div> <!--  Fim do cadastro MORADOR -->
+    
+    </div>
+  </div>
+</div>
+
+<footer class="container-fluid text-center">
+  <p>Condominium</p>
+</footer>
+
+</body>
+</html>
+
