@@ -2,12 +2,21 @@ package com.javaCondominium.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class Vaga implements Serializable{
 	private static final long serialVersionUID = 1L;
-
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idVaga;
 	private Long idResidencia;
 	private String status;
+	private String locador;
 	
 	public Vaga() {
 		
@@ -42,6 +51,14 @@ public class Vaga implements Serializable{
 
 	public void setStatus(String status) {
 		this.status = status;
+	}
+	
+	public String getLocador() {
+		return locador;
+	}
+
+	public void setLocador(String locador) {
+		this.locador = locador;
 	}
 
 	@Override

@@ -3,9 +3,17 @@ package com.javaCondominium.entities;
 import java.io.Serializable;
 import java.util.Date;
 
-public class ChamadoManutencao implements Serializable{
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
+public class Chamado implements Serializable{
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idChamado;
 	private Long idMorador;
 	private Date dataAbertura;
@@ -13,11 +21,11 @@ public class ChamadoManutencao implements Serializable{
 	private String local;
 	private String descricao;
 	
-	public ChamadoManutencao() {
+	public Chamado() {
 		
 	}
 
-	public ChamadoManutencao(Long idChamado, Long idMorador, Date dataAbertura, Date dataEncerramento, String local,
+	public Chamado(Long idChamado, Long idMorador, Date dataAbertura, Date dataEncerramento, String local,
 			String descricao) {
 		super();
 		this.idChamado = idChamado;
@@ -92,7 +100,7 @@ public class ChamadoManutencao implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		ChamadoManutencao other = (ChamadoManutencao) obj;
+		Chamado other = (Chamado) obj;
 		if (idChamado == null) {
 			if (other.idChamado != null)
 				return false;

@@ -2,12 +2,21 @@ package com.javaCondominium.entities;
 
 import java.io.Serializable;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+@Entity
 public class AreaComum implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idAreaComum;
 	private String nome;
-	private int lotacao;
+	private int ocupacao;
+	private int limite;
 	
 	public AreaComum() {
 		
@@ -17,7 +26,7 @@ public class AreaComum implements Serializable {
 		super();
 		this.idAreaComum = idAreaComum;
 		this.nome = nome;
-		this.lotacao = lotacao;
+		this.ocupacao = lotacao;
 	}
 
 	public Long getIdAreaComum() {
@@ -26,6 +35,14 @@ public class AreaComum implements Serializable {
 
 	public void setIdAreaComum(Long idAreaComum) {
 		this.idAreaComum = idAreaComum;
+	}
+	
+	public int getLimite() {
+		return limite;
+	}
+
+	public void setLimite(int limite) {
+		this.limite = limite;
 	}
 
 	@Override
@@ -62,11 +79,11 @@ public class AreaComum implements Serializable {
 	}
 
 	public int getLotacao() {
-		return lotacao;
+		return ocupacao;
 	}
 
 	public void setLotacao(int lotacao) {
-		this.lotacao = lotacao;
+		this.ocupacao = lotacao;
 	}
 	
 	

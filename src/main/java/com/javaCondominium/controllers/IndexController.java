@@ -1,16 +1,14 @@
-package com.javaCondominium;
-
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
+package com.javaCondominium.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-public class indexController {
+public class IndexController {
 	
 	@RequestMapping("/")
 	public String paginaInicial() {
 		return "index.html";
 	}
 }
+
